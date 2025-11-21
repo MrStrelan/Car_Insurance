@@ -26,6 +26,6 @@ def main():
     print(df.dtypes)
     print("\nFirst 5 rows:")
     print(df.head())
-    print("distinct IDpolicy values:", df["IDpolicy"].nunique())
+    print("distinct IDpolicy values:", df["IDpol"].nunique())
 if __name__ == "__main__":
     main()

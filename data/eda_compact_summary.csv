@@ -1,0 +1,15 @@
+feature,dtype,n_unique,n_missing
+IDpol,float64,542410,0
+ClaimNb,int64,9,0
+Exposure,float64,186,0
+Area,object,6,0
+VehPower,int64,12,0
+VehAge,int64,76,0
+DrivAge,int64,83,0
+BonusMalus,int64,115,0
+VehBrand,object,11,0
+VehGas,object,2,0
+Density,int64,1606,0
+Region,object,22,0
+ClaimOccur,int32,2,0
+ClaimRate,float64,224,0

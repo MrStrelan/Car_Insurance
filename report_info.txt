@@ -1,0 +1,7 @@
+EDA complete. We displayed:
+- Dataset info, missingness, numeric and categorical summaries.
+- Histograms for ClaimNb, ClaimOccur, ClaimRate.
+- Distributions for numeric features (1st–99th pct clipped).
+- log(1+Density) histogram.
+- Frequency bar charts for categorical features (Area, VehBrand, VehGas, Region).
+Exported compact feature summary to: data/eda_compact_summary.csv
