@@ -5,3 +5,31 @@ EDA complete. We displayed:
 - log(1+Density) histogram.
 - Frequency bar charts for categorical features (Area, VehBrand, VehGas, Region).
 Exported compact feature summary to: data/eda_compact_summary.csv
+
+(A) ClaimRate → ClaimNb (0.26)
+This is expected since ClaimRate = ClaimNb / Exposure.
+Ignore for model insight.
+(B) Exposure (0.07)
+Policies that are insured longer have more chance to claim → correct & expected.
+Not a true predictor, but an offset factor.
+(C) BonusMalus (0.05)
+This is the most meaningful predictor in the dataset.
+BonusMalus summarizes historical driving behavior:
+Low Bonus → safe driver
+High Bonus → risky driver
+Even a small correlation is meaningful due to data imbalance.
+(D) VehAge (0.02)
+Older vehicles show slightly more claims.
+Weak linearly, but ML models normally find more in nonlinear splits.
+(E) DrivAge (0.01)
+Claims often have a U-shape with driver age:
+young drivers → risky
+middle age → safest
+elderly → rising risk again
+Linear correlation cannot capture a U-shape, so this low number is expected.
+(F) Density (0.01)
+Urban areas → more traffic → more accidents.
+But again, relationship is nonlinear, so correlation underestimates importance.
+VehPower (0.0046)
+Barely correlates linearly, but tree-based models often find it important.
+Possible explanation: power interacts with driver profile - bonus/malus.
