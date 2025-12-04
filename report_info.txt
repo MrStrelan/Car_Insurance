@@ -33,3 +33,32 @@ But again, relationship is nonlinear, so correlation underestimates importance.
 VehPower (0.0046)
 Barely correlates linearly, but tree-based models often find it important.
 Possible explanation: power interacts with driver profile - bonus/malus.
+
+We have done PCA on the cleaned training dataset:
+Preprocessing:
+Selected the numerical features 'Exposure', 'VehPower', 'VehAge', 'DrivAge', 'BonusMalus', 'Density'.
+Log Transformed the highly skewed features: BonusMalus, Density.
+Applied feature scaling: Standarization (x - mean)/ std for each numeric feature.
+
+PCA:
+2 principal components, total variance of 47%, meaning the 2D PCA captures 47% of the total dataset.
+PC1 is 27%, PC2 is 20%.
+A third component brings the total up to 64% variance in the whole dataset, with PC3 being 16%.
+Pca is very useful when exploring structure in the dataset.
+
+K-Means clustering:
+Done both on PCA, and separately on the training dataset.
+Used only numerical columns.
+With k=4 clusters:
+Cluster 3 has highest BonusMalus, with 83.57.
+Cluster 2 has highest Driver Age, with 51.20.
+Cluster 0 and 2 have similar Claim Frequncies, 0.152, and 0.154 respectively.
+Cluster 1 has highest exposure, 0.90. etc.
+
+Clustering plots:
+Cluster 2 shows the highest claim frequency, while cluster 1 is lowest, meaning that cluster 2 contains higher-risk policies.
+Cluster 2 shows younger drivers, newer vehicles.
+Cluster 1 shows older drivers, older cars.
+Clusters with higher BonusMalus and higher density tend to show elevated claim frequencies, indicating that urban, high-penalty drivers are riskier.
+
+!!!!!!!!!!TO DO: TRY DIFFERENT NUMBER K !!!!!!!!!!!!!!
